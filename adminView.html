@@ -21,110 +21,161 @@
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
-          <img src="https://www.actaturcica.com/wp-content/uploads/2018/06/JPMorgan-Chase-Logo-PNG-Transparent.png" width="200" height="35" class="d-inline-block align-top" alt="">
-          
+          <!-- <img src="https://give.mws.sg/themes/jms_megamall/img/logo.png" width=70px height=54px class="d-inline-block align-top" alt=""> -->
+          Methodist Welfare Services
         </a>
  </nav>
 
 
-<html>
-    <h2 style="text-align: center;margin-top: 10%">
-        Job Routes
+    <h2 style="margin-left: 18%;margin-top: 20px">
+        Route Confirmation Page
     </h2>
 <body>
-  <div class = "container">
-      
-  </div>
-  <div id="map" style="height:60%;width:60%;margin:0px auto;"></div>
+    <div class="row" style="height: 400px;margin-left:30px">
+        <div class="col-sm-7">
+                <div id="map" >
+                        <script>
+                                function initMap() {
+                                var map = new google.maps.Map(document.getElementById('map'), {
+                                  center: new google.maps.LatLng(1.3521, 103.8198),
+                                  zoom: 12
+                                });
+                                
+                                var latlonglist = [
+                                    {lat: 1.30637, lng: 103.82705},
+                                    {lat: 1.31164, lng: 103.87461},
+                                    {lat: 1.3074700000000001, lng: 103.833641},
+                                    {lat: 1.35944, lng: 103.88812},
+                                    {lat: 1.33349, lng: 103.89652},
+                                    {lat: 1.33245, lng: 103.75851},
+                                    {lat: 1.33023, lng: 103.84492}
+                                ]
+                                for (i=0;i<latlonglist.length;i++){
+                                    var myLatLng = latlonglist[i]
+                                    var marker = new google.maps.Marker({
+                                    position: myLatLng,
+                                    map: map,
+                                    title: 'Trip' + i
+                                    });
+                                }  
+                                
+                                }
+                                
+                            </script>
+                            <script async defer
+                            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl65iq0IeE6OezoLw208Ic8MCj4LTUOyM&callback=initMap">
+                            </script>
+                          </div>
+        </div>
+        <div class="col-sm-5">
+                <h3>
+                        Are you happy with this route?
+                    </h3>
+                    <br>
+                    <button type="button" class="btn btn-success" onclick="success()">Yes!</button>
+                    <button type="button" class="btn btn-danger">No...</button>
+        </div>
+    </div>
+    <p id="success"></p>
 
-  <script>
-    var customLabel = {
-      restaurant: {
-        label: 'R'
-      },
-      bar: {
-        label: 'B'
-      }
-    };
-
-      function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: new google.maps.LatLng(1.3521, 103.8198),
-        zoom: 12
-      });
-
-      var infoWindow = new google.maps.InfoWindow;
-
-      //   // Change this depending on the name of your PHP or XML file
-      //   downloadUrl('https://storage.googleapis.com/mapsdevsite/json/mapmarkers2.xml', function(data) {
-      //     var xml = data.responseXML;
-      //     var markers = xml.documentElement.getElementsByTagName('marker');
-      //     Array.prototype.forEach.call(markers, function(markerElem) {
-      //       var id = markerElem.getAttribute('id');
-      //       var name = markerElem.getAttribute('name');
-      //       var address = markerElem.getAttribute('address');
-      //       var type = markerElem.getAttribute('type');
-      //       var point = new google.maps.LatLng(
-      //           parseFloat(markerElem.getAttribute('lat')),
-      //           parseFloat(markerElem.getAttribute('lng')));
-
-      //       var infowincontent = document.createElement('div');
-      //       var strong = document.createElement('strong');
-      //       strong.textContent = name
-      //       infowincontent.appendChild(strong);
-      //       infowincontent.appendChild(document.createElement('br'));
-
-      //       var text = document.createElement('text');
-      //       text.textContent = address
-      //       infowincontent.appendChild(text);
-      //       var icon = customLabel[type] || {};
-      //       var marker = new google.maps.Marker({
-      //         map: map,
-      //         position: point,
-      //         label: icon.label
-      //       });
-      //       marker.addListener('click', function() {
-      //         infoWindow.setContent(infowincontent);
-      //         infoWindow.open(map, marker);
-      //       });
-      //     });
-      //   });
-      }
-
-
-
-  //   function downloadUrl(url, callback) {
-  //     var request = window.ActiveXObject ?
-  //         new ActiveXObject('Microsoft.XMLHTTP') :
-  //         new XMLHttpRequest;
-
-  //     request.onreadystatechange = function() {
-  //       if (request.readyState == 4) {
-  //         request.onreadystatechange = doNothing;
-  //         callback(request, request.status);
-  //       }
-  //     };
-
-  //     request.open('GET', url, true);
-  //     request.send(null);
-  //   }
-
-    function doNothing() {}
-  </script>
-  <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl65iq0IeE6OezoLw208Ic8MCj4LTUOyM&callback=initMap">
-  </script>
+    <script>
+    function myFunction() {
+      document.getElementById("success").innerHTML = "Success!";
+    }
+    </script>
 </body>
 
-<style>
-  #map {
-      height: 50%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      }
-</style>
+</div>
+<div class="container" id="action" style="margin-left: 30%">
+    
+</div>
+
+<div class="container"  style="margin-left: 20%; margin-top: 30px; width: 60%">
+    <h3>
+        Trip Details
+    </h3>
+    <div>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for trip..">
+
+        <table id="table table-bordered">
+          <tr class="header">
+            <th style="width:15%;">Driver Name</th>
+            <th style="width:25%;">Start Time</th>
+            <th style="width:25%;">End Time</th>
+            <th style="width:40%;">Address</th>
+            <th style="width:50%;">Action</th>
+          </tr>
+          <tr>
+            <td>Peter Tan</td>
+            <td>4/10/2019 9:21am</td>
+            <td>4/10/2019 9:31am</td>
+            <td>167 Geylang Road #03-04</td>
+            <td>
+                <a href="https://www.w3schools.com/html/">Edit</a>
+                <a href="https://www.w3schools.com/html/">Approve</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Peter Tan</td>
+            <td>4/10/2019 10:41am</td>
+            <td>4/10/2019 10:55am</td>
+            <td>101 Boon Keng Road 06-20</td>
+            <td>
+                <a href="https://www.w3schools.com/html/">Edit</a>
+                <a href="https://www.w3schools.com/html/">Approve</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Peter Tan</td>
+            <td>4/10/2019 12:21pm</td>
+            <td>4/10/2019 12:31pm</td>
+            <td>Zhujiao Centre (Tekka Market) 665 Buffalo Road #01-172</td>
+            <td>
+                <a href="https://www.w3schools.com/html/">Edit</a>
+                <a href="https://www.w3schools.com/html/">Approve</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Peter Tan</td>
+            <td>4/10/2019 2:21pm</td>
+            <td>4/10/2019 2:31pm</td>
+            <td>13 Hougang Ave 7 #01-519</td>
+            <td>
+                <a href="https://www.w3schools.com/html/">Edit</a>
+                <a href="https://www.w3schools.com/html/">Approve</a>
+            </td>
+          </tr>
+          <tr>
+                <td>Peter Tan</td>
+                <td>4/10/2019 3:21pm</td>
+                <td>4/10/2019 3:31pm</td>
+                <td>Zhujiao Centre (Tekka Market) 665 Buffalo Road #01-172</td>
+                <td>
+                    <a href="https://www.w3schools.com/html/">Edit</a>
+                    <a href="https://www.w3schools.com/html/">Approve</a>
+                </td>
+              </tr>
+              <tr>
+                    <td>Peter Tan</td>
+                    <td>4/10/2019 4:21pm</td>
+                    <td>4/10/2019 4:31pm</td>
+                    <td>Zhujiao Centre (Tekka Market) 665 Buffalo Road #01-172</td>
+                    <td>
+                        <a href="https://www.w3schools.com/html/">Edit</a>
+                        <a href="https://www.w3schools.com/html/">Approve</a>
+                    </td>
+                  </tr>
+                  <tr>
+                        <td>Peter Tan</td>
+                        <td>4/10/2019 5:21pm</td>
+                        <td>4/10/2019 12:25pm</td>
+                        <td>Zhujiao Centre (Tekka Market) 665 Buffalo Road #01-172</td>
+                        <td>
+                            <a href="https://www.w3schools.com/html/">Edit</a>
+                            <a href="https://www.w3schools.com/html/">Approve</a>
+                        </td>
+                      </tr>
+        </table>
+    </div>
+</div>
 </html>

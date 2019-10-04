@@ -29,7 +29,7 @@
    
       <h2>User Request Form</h2>
       
-      <form method = "post" action = "/tutorial_view.php">
+      <form method = "post" action = "adminView.html">
          <table>
             <tr>
                <td>Address From:</td> 
