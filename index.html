@@ -1,0 +1,63 @@
+<!DOCTYPE html >
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <title>Using MySQL and PHP with Google Maps</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+
+<html>
+  <body>
+    hi
+    <div id="map"></div>
+
+    <script>
+        function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(1.3521, 103.8198),
+          zoom: 12
+        });
+        
+        var latlonglist = [
+            {lat: 1.30637, lng: 103.82705},
+            {lat: 1.31164, lng: 103.87461},
+            {lat: 1.3074700000000001, lng: 103.833641},
+            {lat: 1.35944, lng: 103.88812},
+            {lat: 1.33349, lng: 103.75851},
+            {lat: 1.33023, lng: 103.84492}
+        ]
+        for (i=0;i<latlonglist.length;i++){
+            var myLatLng = latlonglist[i]
+            var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Trip' + i
+            });
+        }  
+        
+        }
+        
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?API_KEY&callback=initMap">
+    </script>
+  </body>
+
+<style>
+    #map {
+        height: 50%;
+        }
+</style>
+</html>
