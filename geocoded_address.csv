@@ -1,0 +1,8 @@
+﻿ID,address_from,address_to,google_place_id,input_string,latitude_from,longitude_from,latitude_to,longitude_to,status,type
+1,19 Tanglin Rd #02-49,1 Rochor Canal Road #01-42 Sim Lim Square,,19 Tanglin Rd #02-49,1.30637,103.82705,1.2859,103.84937,ok,
+2,167 Geylang Road #03-04,6 Everton Pk #01-08,,167 Geylang Road #03-04,1.31164,103.87461,1.27671,103.83879,ok,
+3,14 Scotts Road,13 Hougang Ave 7 #01-519,,14 Scotts Road,1.30747,103.833641,1.30747,103.833641,ok,
+4,212 Hougang Street 21 #03-339,458 Macpherson Road,,212 Hougang Street 21 #03-339,1.35944,103.88812,1.33202,103.88293,ok,
+5,"53, Ubi Ave 3",101 Boon Keng Road 06-20,,"53, Ubi Ave 3",1.33349,103.89652,1.31664,103.86303,ok,
+6,"30, Old Toh Tuck Road, 02-01",Lucky Plaza 304 Orchard Road #b1-12,,"30, Old Toh Tuck Road, 02-01",1.33245,103.75851,1.30422,103.83337,ok,
+7,161 Lor 1 Toa Payoh #01-1600,Zhujiao Centre (Tekka Market) 665 Buffalo Road #01-172,,161 Lor 1 Toa Payoh #01-1600,1.33023,103.84492,1.30621,103.85061,ok,
